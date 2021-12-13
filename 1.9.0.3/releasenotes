@@ -1,0 +1,11 @@
+FIX: Issues hunting free agents
+Agents that are using the free license, weren't added correctly to the active group members, which resulted in hunting issues; By setting the default presence value for these agents within the presence service, the issue has been resolved.
+ 
+ADDED: Manual and report intents
+Agents now have the possibility to request the manual and report links via the matching commands (manual and report)
+
+FIX: Issues setting the hunt time-out values for a group
+There were issues changing the hunt time-out values for a group. Version 1.9.0.3 fixes this, so the administrator can change the values again.
+
+FIX: Leave a message option was missing on the edit group settings card 
+The leave a message option was missing on the edit group settings card. Fixed this by upgrading the card that was being used.
