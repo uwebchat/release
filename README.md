@@ -1,26 +1,20 @@
-# Version 1.11.0 *10/07/2024*
+# Version 1.12.0 *25/07/2024*
 
 ## Release notes
 
-### Transcriptions
+### Custom "Leave a message" button
 
-* **Added a downloadable transcript for end-users that shows the entire conversation history in `.txt` format.** <br />
-*Accessible for professional users and up, available for both agent and virtual agent conversations.*
+* **Added functionality to add a custom button under the "Leave a message" dialog.** <br />
+*This can be found under `Help` -> `Manage groups` -> `Edit an existing group` -> `Leave a Message Button` -> (`Add custom button` or `Remove custom button`) and is accessible for basic users and up.*
 
-### Privileges Management
+### Under the hood
 
-* **Added the option to grant and revoke administrative privileges to multiple agents within your uWebChat tenant.** <br />
-*This can be found under `Help` -> `Manage agents` -> `Manage privileges` -> `Grant or Revoke privileges`.*
-
-### Virtual Assistant
-
-* **Added functionality to connect to a real agent from within a conversation with the virtual assistant.** <br />
-*This can be found when talking with a virtual assistant within a group, and clicking the `Call live Agent` button.*
-* **Added functionality to connect with a virtual assistant during closed hours of a group instead of leaving a message.** <br />
-*This can be found under `Help` -> `Manage groups` -> `Edit an existing group` -> `VA in closed-hours`.*
-* **Added a dialog to configure the required credentials and endpoints that the virtual agent needs to function.** <br />
-*Currently unavailable within the help menu, type `configure openai` in order to prompt for the dialog.*
+* **Reworked the service that's responsible for keeping track of the current conversation history in order to generate transcripts.** <br />
+*Added numerous logging, improved the performance and reliability, especially surrounding the virtual assistant.* 
+* **Reworked the service that's responsible for for catching any errors that weren't correctly handled or caught during normal execution.** <br />
+*It'll now forward any uncaught error(s) to our logging system, along with a detailed description of any relevant settings and variables that were present during execution.*
 
 ## Bug & Hot fixes
 
-* 🐞 Fixed an issue where sending two or more messages to the assistant agent at once would cause problems.
+* 🐞 Fixed an issue where irrelevant database logs were clogging up the logging system.
+* 🐞 Fixed a few existing technical issues that came to light due to the implementation of a more extensive logging system.
